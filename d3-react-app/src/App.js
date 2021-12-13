@@ -16,8 +16,8 @@ function App() {
 	const mouthArc = arc()
 		.innerRadius(mouthRadius)
 		.outerRadius(mouthRadius + mouthWidth)
-		.startAngle(Math.PI / 2)
-		.endAngle((Math.PI * 3) / 2);
+		.startAngle(7.1)
+		.endAngle(5.5);
 
 	return (
 		<div className="App">
@@ -26,7 +26,7 @@ function App() {
 					<g transform={`translate(${centerX}, ${centerY})`}>
 						<circle
 							r="200"
-							fill="yellow"
+							fill="lightblue"
 							stroke="black"
 							stroke-width="10"
 						></circle>
@@ -42,7 +42,12 @@ function App() {
 							cy={-eyeOffSetY}
 							stroke-width="10"
 						></circle>
-						<path d={mouthArc()} stroke="black" stroke-width="10"></path>
+						<path
+							d={mouthArc()}
+							stroke="black"
+							stroke-width="10"
+							transform={"translate(0 180)"}
+						></path>
 					</g>
 				</svg>
 			</body>
