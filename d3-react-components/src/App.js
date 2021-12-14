@@ -1,30 +1,31 @@
 import "./App.css";
 
 // Components
-import BackGroundCircle from "./components/BackGroundCircle";
-import Eye from "./components/Eye";
-import Mouth from "./components/Mouth";
+import Face from "./components/Face";
+
+const width = 160;
+const height = 160;
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function App() {
-	const width = 960;
-	const height = 500;
-	const centerX = width / 2;
-	const centerY = height / 2;
-	const eyeOffSetX = 90;
-	const eyeOffSetY = 50;
-
 	return (
 		<div className="App">
-			<body>
-				<svg width={width} height={height}>
-					<g transform={`translate(${centerX}, ${centerY})`}>
-						<BackGroundCircle radius={200} />
-						<Eye cx={-eyeOffSetX} cy={-eyeOffSetY} />
-						<Eye cx={+eyeOffSetX} cy={-eyeOffSetY} />
-						<Mouth />
-					</g>
-				</svg>
-			</body>
+			{array.map(() => {
+				return (
+					<Face
+						width={width}
+						height={height}
+						centerX={width / 2}
+						centerY={height / 2}
+						stokeWidth={20}
+						eyeOffSetX={90 + Math.random() * 30}
+						eyeOffSetY={50 + Math.random() * 30}
+						eyeRadius={10 + Math.random() * 30}
+						mouthWidth={5 + Math.random() * 30}
+						mouthRadius={120 + Math.random() * 30}
+					/>
+				);
+			})}
 		</div>
 	);
 }
