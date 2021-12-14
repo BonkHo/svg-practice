@@ -1,11 +1,14 @@
 import "./App.css";
 
+// D3 Functions
+import { range } from "d3";
+
 // Components
 import Face from "./components/Face";
 
 const width = 160;
 const height = 160;
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const array = range(6 * 10);
 
 function App() {
 	return (
@@ -17,12 +20,18 @@ function App() {
 						height={height}
 						centerX={width / 2}
 						centerY={height / 2}
-						stokeWidth={20}
-						eyeOffSetX={90 + Math.random() * 30}
-						eyeOffSetY={50 + Math.random() * 30}
-						eyeRadius={10 + Math.random() * 30}
-						mouthWidth={5 + Math.random() * 30}
-						mouthRadius={120 + Math.random() * 30}
+						// stokeWidth={10}
+						// eyeOffSetX={90}
+						// eyeOffSetY={50}
+						// eyeRadius={20}
+						// mouthWidth={5}
+						// mouthRadius={120}
+						strokeWidth={6 + Math.random() * 3}
+						eyeOffsetX={20 + Math.random() * 9}
+						eyeOffsetY={20 + Math.random() * 15}
+						eyeRadius={5 + Math.random() * 10}
+						mouthWidth={7 + Math.random() * 9}
+						mouthRadius={30 + Math.random() * 10}
 					/>
 				);
 			})}

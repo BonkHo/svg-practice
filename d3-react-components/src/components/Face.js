@@ -2,7 +2,7 @@ import React from "react";
 
 // Components
 import BackGroundCircle from "./BackGroundCircle";
-import Eye from "./Eye";
+import Eyes from "./Eyes";
 import Mouth from "./Mouth";
 import FaceContainer from "./FaceContainer";
 
@@ -11,28 +11,34 @@ const Face = ({
 	height,
 	centerX,
 	centerY,
-	eyeOffSetY,
-	eyeOffSetX,
+	strokeWidth,
+	eyeOffsetY,
+	eyeOffsetX,
 	eyeRadius,
 	mouthWidth,
 	mouthRadius,
 }) => {
 	return (
-		<div>
-			<body>
-				<FaceContainer
-					width={width}
-					height={height}
-					centerX={centerX}
-					centerY={centerY}
-				>
-					<BackGroundCircle radius={200} width={width} height={height} />
-					<Eye cx={-eyeOffSetX} cy={-eyeOffSetY} eyeRadius={eyeRadius} />
-					<Eye cx={+eyeOffSetX} cy={-eyeOffSetY} eyeRadius={eyeRadius} />
-					<Mouth mouthWidth={mouthWidth} mouthRadius={mouthRadius} />
-				</FaceContainer>
-			</body>
-		</div>
+		<FaceContainer
+			width={width}
+			height={height}
+			centerX={centerX}
+			centerY={centerY}
+		>
+			<BackGroundCircle
+				radius={centerY - strokeWidth / 2}
+				strokeWidth={strokeWidth}
+			/>
+			<Eyes
+				eyeOffsetX={eyeOffsetX}
+				eyeOffsetY={eyeOffsetY}
+				eyeRadius={eyeRadius}
+			/>
+			<Mouth
+				mouthWidth={mouthWidth}
+				mouthRadius={mouthRadius}
+			/>
+		</FaceContainer>
 	);
 };
 

@@ -7,7 +7,14 @@ const Mouth = ({ mouthRadius, mouthWidth }) => {
 		.outerRadius(mouthRadius + mouthWidth)
 		.startAngle(7.1)
 		.endAngle(5.5);
-	return <path d={mouthArc()} stroke="black" stroke-width="10"></path>;
+	return (
+		<path
+			d={mouthArc()}
+			stroke="black"
+			stroke-width="10"
+			transform={`translate(0, 50)`}
+		></path>
+	);
 };
 
 export default Mouth;

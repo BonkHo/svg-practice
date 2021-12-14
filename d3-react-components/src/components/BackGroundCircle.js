@@ -1,13 +1,13 @@
 import React from "react";
 
-const BackGroundCircle = ({ radius }) => {
+const BackGroundCircle = ({ radius, strokeWidth }) => {
 	return (
 		<circle
 			r={radius}
 			fill="lightblue"
 			stroke="black"
-			stroke-width="10"
-		></circle>
+			stroke-width={strokeWidth}
+		/>
 	);
 };
 
